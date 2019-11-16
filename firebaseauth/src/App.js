@@ -37,8 +37,7 @@ class App extends Component {
     return (
       <Container>
         <br/>
-           <Home />
-        {/* {this.state.user ? <Home/> : <LoginRegister />} */}
+        {this.state.user ? <Home user={this.state.user}/> : <LoginRegister />}
       </Container>
     );
   }
