@@ -26,6 +26,14 @@ class LoginRegister extends Component {
     })
    }
 
+   signUp = () => {
+    let { email, password } = this.state;
+    firebaseApp.auth().createUserWithEmailAndPassword(email, password)
+    .catch(error => {
+        this.setState({firebaseErrors: error.message})
+    })
+   }
+
    renderErrorAlert = () => {
         return (
             <Alert color="danger">
@@ -57,7 +65,7 @@ class LoginRegister extends Component {
                     <Col md={{ size: 6, offset: 3 }}>
                         <Button color="success" value="Enter" onClick={this.login}>SignIn</Button> 
                         {' '}  
-                        <Button color="primary">SignUp</Button>
+                        <Button color="primary" onClick={this.signUp}>SignUp</Button>
                     </Col>
                 </Row>
             </div>
