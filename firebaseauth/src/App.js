@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebaseApp from './config/firebaseConfig';
 import LoginRegister from './components/LoginRegister';
+import Home from './components/Home';
 import {Container, Row, Col} from 'reactstrap';
 
 
@@ -36,7 +37,7 @@ class App extends Component {
     return (
       <Container>
         <br/>
-           <LoginRegister />
+           <Home />
         {/* {this.state.user ? <Home/> : <LoginRegister />} */}
       </Container>
     );
